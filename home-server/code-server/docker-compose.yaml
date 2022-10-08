@@ -1,0 +1,36 @@
+version: "2.1"
+services:
+  code-server:
+    build: .
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - PASSWORD=${PASSWORD}
+      - SUDO_PASSWORD=${SUDO_PASSWORD}
+    volumes:
+      - ./config:/config
+      - ./projects:/home/projects/
+      - ./extensions:/home/extensions/
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    expose:
+      - "8443"
+    ports:
+      - "3000:3000"
+      - "8000:8080"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vscode.entrypoints=web"
+      - "traefik.http.routers.vscode.rule=Host(`vscode.local`)"
+      - "traefik.http.routers.vscode.service=vscode"
+      - "traefik.http.services.vscode.loadbalancer.server.port=8443"
+      - "traefik.docker.network=traefik_traefik"
+    restart: unless-stopped
+    networks:
+      - traefik_traefik
+
+networks:
+  traefik_traefik:
+    external: true

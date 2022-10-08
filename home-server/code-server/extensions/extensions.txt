@@ -1,0 +1,4 @@
+https://f2.vsixhub.com/file.php?version=0.21.2022091500&ext_name=vscode-java-dependency&post_id=2021&app_id=7865e561-1c83-410e-9b99-aabada597a7e&token=78e93a0c2f7ecb462784238446cac0c31665242882
+https://f2.vsixhub.com/file.php?version=0.25.1&ext_name=rest-client&post_id=2037&app_id=dda49fd5-1f3b-4d25-bf61-4fc41905ede5&token=5cd7833f574bff6ac52b0820b884073b1665242940
+https://f2.vsixhub.com/file.php?version=1.1.274&ext_name=pyright&post_id=1915&app_id=593fe6a5-513e-4cb3-abfb-5b9f5fe39802&token=0194997d9cc1fb37303135afff5c29c11665243005
+https://download.jboss.org/jbosstools/jdt.ls/staging/java-1.10.0-714/java-1.10.0-714.vsix
